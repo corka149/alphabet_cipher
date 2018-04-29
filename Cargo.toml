@@ -1,5 +1,5 @@
 [package]
-name = "ProjectEuler"
+name = "alphabet_cipher"
 version = "0.1.0"
 authors = ["corka149 <corka149@mailbox.org>"]
 
