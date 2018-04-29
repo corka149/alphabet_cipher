@@ -20,10 +20,11 @@ fn main() {
 
 fn cipher<'a>(text: &'a str, offsets: &'a str) -> String {
     text.chars()
-        .zip(offsets.chars().cycle()).map(|(t, o)| encode(t, o))
+        .zip(offsets.chars().cycle()).map(|(t, o)| encode_char(t, o))
         .collect()
 }
 
-fn encode(x: char, offset: char) -> char {
-    char::from((((x as u32 - 97 + offset as u32 - 97) % 26) + 97) as u8 )
+fn encode_char(text: char, offset: char) -> char {
+    let x = 'a' as u8;
+    char::from((((text as u8 - x + offset as u8 - x) % 26) + x) as u8 )
 }
